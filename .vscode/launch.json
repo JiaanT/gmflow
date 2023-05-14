@@ -1,0 +1,74 @@
+// {
+//     // 使用 IntelliSense 了解相关属性。 
+//     // 悬停以查看现有属性的描述。
+//     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "name": "Python: 当前文件",
+//             "type": "python",
+//             "request": "launch",
+//             "program": "${file}",
+//             "console": "integratedTerminal",
+//             "justMyCode": true,
+//             "args": [
+//                 "--checkpoint_dir=checkpoints",
+//                 "--batch_size=4",
+//                 "--val_dataset=chairs",
+//                 "--lr=4e-4",
+//                 "--padding_factor=16",
+//                 "--upsample_factor=8",
+//                 "--with_speed_metric",
+//                 "--val_freq=10000",
+//                 "--save_ckpt_freq=10000",
+//                 "--num_steps=100000",
+//                 "--attn_splits_list=1",
+//                 ""
+//             ]
+//         }
+//     ]
+// }
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug-PyTorch",
+            "type": "python",
+            "request": "launch",
+            "module": "torch.distributed.launch",
+            "args": [
+                "main.py",
+                "--launcher=pytorch",
+                "--checkpoint_dir=${workspaceFolder}/checkpoints/chairs-gmflow",
+                "--batch_size=1",
+                "--val_dataset=chairs,sintel,kitti",
+                "--lr=4e-4",
+                "--padding_factor=16",
+                "--upsample_factor=8",
+                "--with_speed_metric",
+                "--val_freq=10000",
+                "--save_ckpt_freq=10000",
+                "--num_steps=100000",
+                "--num_scales=3",
+                "--attn_splits_list",
+                "1",
+                "1",
+                "1",
+                "--corr_radius_list",
+                "-1",
+                "-1",
+                "-1",
+                "--prop_radius_list",
+                "-1",
+                "-1",
+                "-1",
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                "NUM_GPUS": "1",
+                "CUDA_VISIBLE_DEVICES":"3"
+            },
+        }
+    ]
+}

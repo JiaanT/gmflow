@@ -1,0 +1,128 @@
+{
+    "checkpoint_dir": "tmp",
+    "stage": "chairs",
+    "image_size": [
+        384,
+        512
+    ],
+    "padding_factor": 16,
+    "max_flow": 400,
+    "val_dataset": [
+        "chairs"
+    ],
+    "with_speed_metric": false,
+    "lr": 0.0004,
+    "batch_size": 12,
+    "num_workers": 4,
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "num_steps": 100000,
+    "seed": 326,
+    "summary_freq": 100,
+    "val_freq": 10000,
+    "save_ckpt_freq": 10000,
+    "save_latest_ckpt_freq": 1000,
+    "resume": null,
+    "strict_resume": false,
+    "no_resume_optimizer": false,
+    "num_scales": 1,
+    "feature_channels": 128,
+    "upsample_factor": 8,
+    "num_transformer_layers": 6,
+    "num_head": 1,
+    "attention_type": "swin",
+    "ffn_dim_expansion": 4,
+    "attn_splits_list": [
+        2
+    ],
+    "corr_radius_list": [
+        -1
+    ],
+    "prop_radius_list": [
+        -1
+    ],
+    "gamma": 0.9,
+    "eval": false,
+    "save_eval_to_file": false,
+    "evaluate_matched_unmatched": false,
+    "inference_dir": null,
+    "inference_size": null,
+    "dir_paired_data": false,
+    "save_flo_flow": false,
+    "pred_bidir_flow": false,
+    "fwd_bwd_consistency_check": false,
+    "submission": false,
+    "output_path": "output",
+    "save_vis_flow": false,
+    "no_save_flo": false,
+    "local_rank": 0,
+    "distributed": false,
+    "launcher": "none",
+    "gpu_ids": 0,
+    "count_time": false
+}
+
+{
+    "checkpoint_dir": "tmp",
+    "stage": "chairs",
+    "image_size": [
+        384,
+        512
+    ],
+    "padding_factor": 16,
+    "max_flow": 400,
+    "val_dataset": [
+        "chairs"
+    ],
+    "with_speed_metric": false,
+    "lr": 0.0004,
+    "batch_size": 12,
+    "num_workers": 4,
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "num_steps": 100000,
+    "seed": 326,
+    "summary_freq": 100,
+    "val_freq": 10000,
+    "save_ckpt_freq": 10000,
+    "save_latest_ckpt_freq": 1000,
+    "resume": null,
+    "strict_resume": false,
+    "no_resume_optimizer": false,
+    "num_scales": 1,
+    "feature_channels": 128,
+    "upsample_factor": 8,
+    "num_transformer_layers": 6,
+    "num_head": 1,
+    "attention_type": "swin",
+    "ffn_dim_expansion": 4,
+    "attn_splits_list": [
+        2
+    ],
+    "corr_radius_list": [
+        -1
+    ],
+    "prop_radius_list": [
+        -1
+    ],
+    "gamma": 0.9,
+    "eval": false,
+    "save_eval_to_file": false,
+    "evaluate_matched_unmatched": false,
+    "inference_dir": null,
+    "inference_size": null,
+    "dir_paired_data": false,
+    "save_flo_flow": false,
+    "pred_bidir_flow": false,
+    "fwd_bwd_consistency_check": false,
+    "submission": false,
+    "output_path": "output",
+    "save_vis_flow": false,
+    "no_save_flo": false,
+    "local_rank": 0,
+    "distributed": false,
+    "launcher": "none",
+    "gpu_ids": 0,
+    "count_time": false
+}
+

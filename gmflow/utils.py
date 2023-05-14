@@ -83,4 +83,34 @@ def feature_add_position(feature0, feature1, attn_splits, feature_channels):
         feature0 = feature0 + position
         feature1 = feature1 + position
 
+    return feature0, feature1, position
+
+
+def feature_remove_position(feature0, feature1, position, attn_splits):
+    if attn_splits > 1:  # remove position in splitted window
+        feature0_splits = split_feature(feature0, num_splits=attn_splits)
+        feature1_splits = split_feature(feature1, num_splits=attn_splits)
+
+        feature0_splits = feature0_splits - position
+        feature1_splits = feature1_splits - position
+
+        feature0 = merge_splits(feature0_splits, num_splits=attn_splits)
+        feature1 = merge_splits(feature1_splits, num_splits=attn_splits)
+    else:
+        feature0 = feature0 - position
+        feature1 = feature1 - position
+
     return feature0, feature1
+
+
+def feature_remove_position_single(feature, position, attn_splits):
+    if attn_splits > 1:  # remove position in splitted window
+        feature_splits = split_feature(feature, num_splits=attn_splits)
+
+        feature_splits = feature_splits - position
+
+        feature = merge_splits(feature_splits, num_splits=attn_splits)
+    else:
+        feature = feature - position
+
+    return feature

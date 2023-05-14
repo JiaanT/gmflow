@@ -160,7 +160,7 @@ class MpiSintel(FlowDataset):
 
 class FlyingChairs(FlowDataset):
     def __init__(self, aug_params=None, split='train',
-                 root='datasets/FlyingChairs_release/data',
+                 root='datasets/FlyingChairs/data',
                  ):
         super(FlyingChairs, self).__init__(aug_params)
 
